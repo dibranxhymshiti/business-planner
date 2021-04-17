@@ -1,0 +1,349 @@
+/*------------
+Screens -----
+------------*/
+$md: 959px;
+$lg: 1279px;
+$xl: 1919px;
+
+/*------------
+MARGINS -----
+------------*/
+$margins: (
+        0: 0,
+        5: (5/14) + rem,
+        10: (10/14) + rem,
+        15: (15/14) + rem,
+        20: (20/14) + rem,
+        25: (25/14) + rem,
+        30: (30/14) + rem,
+        35: (35/14) + rem,
+        40: (40/14) + rem,
+        45: (45/14) + rem,
+        50: (50/14) + rem,
+        55: (55/14) + rem,
+        60: (60/14) + rem,
+        65: (65/14) + rem,
+        70: (70/14) + rem,
+        75: (75/14) + rem,
+        80: (80/14) + rem,
+        85: (85/14) + rem,
+        90: (90/14) + rem,
+        95: (95/14) + rem,
+        100: (100/14) + rem
+);
+
+// margins example: m-30
+@each $margin, $margin-value in $margins {
+  .m-#{$margin} {
+    margin: $margin-value !important;
+  }
+}
+
+// margins top: mt-30
+@each $margin, $margin-value in $margins {
+  .mt-#{$margin} {
+    margin-top: $margin-value !important;
+  }
+}
+
+// margins right: mr-30
+@each $margin, $margin-value in $margins {
+  .mr-#{$margin} {
+    margin-right: $margin-value !important;
+  }
+}
+
+// margins bottom: mb-30
+@each $margin, $margin-value in $margins {
+  .mb-#{$margin} {
+    margin-bottom: $margin-value !important;
+  }
+}
+
+// margins left: ml-30
+@each $margin, $margin-value in $margins {
+  .ml-#{$margin} {
+    margin-left: $margin-value !important;
+  }
+}
+
+// margins y (top and bottom): my-30
+@each $margin, $margin-value in $margins {
+  .my-#{$margin} {
+    margin-top: $margin-value !important;
+    margin-bottom: $margin-value !important;
+  }
+}
+
+// margins x (left and right): mx-30
+@each $margin, $margin-value in $margins {
+  .mx-#{$margin} {
+    margin-left: $margin-value !important;
+    margin-right: $margin-value !important;
+  }
+}
+
+/*-------------
+ PADDINGS -----
+-------------*/
+$paddings: (
+        0: 0,
+        5: (5/14) + rem,
+        10: (10/14) + rem,
+        15: (15/14) + rem,
+        20: (20/14) + rem,
+        25: (25/14) + rem,
+        30: (30/14) + rem,
+        35: (35/14) + rem,
+        40: (40/14) + rem,
+        45: (45/14) + rem,
+        50: (50/14) + rem,
+        55: (55/14) + rem,
+        60: (60/14) + rem,
+        65: (65/14) + rem,
+        70: (70/14) + rem,
+        75: (75/14) + rem,
+        80: (80/14) + rem,
+        85: (85/14) + rem,
+        90: (90/14) + rem,
+        95: (95/14) + rem,
+        100: (100/14) + rem
+);
+
+// paddings: p-30
+@each $padding, $padding-value in $paddings {
+  .p-#{$padding} {
+    padding: $padding-value !important;
+  }
+}
+
+// paddings top: pt-30
+@each $padding, $padding-value in $paddings {
+  .pt-#{$padding} {
+    padding-top: $padding-value !important;
+  }
+}
+
+// paddings right: pr-30
+@each $padding, $padding-value in $paddings {
+  .pr-#{$padding} {
+    padding-right: $padding-value !important;
+  }
+}
+
+// paddings bottom: pb-30
+@each $padding, $padding-value in $paddings {
+  .pb-#{$padding} {
+    padding-bottom: $padding-value !important;
+  }
+}
+
+// paddings left: pl-30
+@each $padding, $padding-value in $paddings {
+  .pl-#{$padding} {
+    padding-left: $padding-value !important;
+  }
+}
+
+// paddings y (top and bottom): py-30
+@each $padding, $padding-value in $paddings {
+  .py-#{$padding} {
+    padding-top: $padding-value !important;
+    padding-bottom: $padding-value !important;
+  }
+}
+
+// paddings x (left and right): px-30
+@each $padding, $padding-value in $paddings {
+  .px-#{$padding} {
+    padding-left: $padding-value !important;
+    padding-right: $padding-value !important;
+  }
+}
+
+/*------------------
+ MEDIA QUERIES -----
+--------------------*/
+@media screen and (max-width: $lg) {
+  // Margins
+  @each $margin, $margin-value in $margins {
+    .m-lg-#{$margin} {
+      margin: $margin-value !important;
+    }
+    .mt-lg-#{$margin} {
+      margin-top: $margin-value !important;
+    }
+    .mb-lg-#{$margin} {
+      margin-bottom: $margin-value !important;
+    }
+    .mr-lg-#{$margin} {
+      margin-right: $margin-value !important;
+    }
+    .ml-lg-#{$margin} {
+      margin-left: $margin-value !important;
+    }
+    .my-lg-#{$margin} {
+      margin-top: $margin-value !important;
+      margin-bottom: $margin-value !important;
+    }
+    .mx-lg-#{$margin} {
+      margin-right: $margin-value !important;
+      margin-left: $margin-value !important;
+    }
+  }
+  // Paddings
+  @each $padding, $padding-value in $paddings {
+    .p-lg-#{$padding} {
+      padding: $padding-value !important;
+    }
+    .pt-lg-#{$padding} {
+      padding-top: $padding-value !important;
+    }
+    .pb-lg-#{$padding} {
+      padding-bottom: $padding-value !important;
+    }
+    .pr-lg-#{$padding} {
+      padding-right: $padding-value !important;
+    }
+    .pl-lg-#{$padding} {
+      padding-left: $padding-value !important;
+    }
+    .py-lg-#{$padding} {
+      padding-top: $padding-value !important;
+      padding-bottom: $padding-value !important;
+    }
+    .px-lg-#{$padding} {
+      padding-right: $padding-value !important;
+      padding-left: $padding-value !important;
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  // Margins
+  @each $margin, $margin-value in $margins {
+    .m-md-#{$margin} {
+      margin: $margin-value !important;
+    }
+    .mt-md-#{$margin} {
+      margin-top: $margin-value !important;
+    }
+    .mb-md-#{$margin} {
+      margin-bottom: $margin-value !important;
+    }
+    .mr-md-#{$margin} {
+      margin-right: $margin-value !important;
+    }
+    .ml-md-#{$margin} {
+      margin-left: $margin-value !important;
+    }
+    .my-md-#{$margin} {
+      margin-top: $margin-value !important;
+      margin-bottom: $margin-value !important;
+    }
+    .mx-md-#{$margin} {
+      margin-right: $margin-value !important;
+      margin-left: $margin-value !important;
+    }
+  }
+  // Paddings
+  @each $padding, $padding-value in $paddings {
+    .p-md-#{$padding} {
+      padding: $padding-value !important;
+    }
+    .pt-md-#{$padding} {
+      padding-top: $padding-value !important;
+    }
+    .pb-md-#{$padding} {
+      padding-bottom: $padding-value !important;
+    }
+    .pr-md-#{$padding} {
+      padding-right: $padding-value !important;
+    }
+    .pl-md-#{$padding} {
+      padding-left: $padding-value !important;
+    }
+    .py-md-#{$padding} {
+      padding-top: $padding-value !important;
+      padding-bottom: $padding-value !important;
+    }
+    .px-md-#{$padding} {
+      padding-right: $padding-value !important;
+      padding-left: $padding-value !important;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// Text Align
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+
+// Size
+.h-screen {
+  min-height: 100vh;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-half {
+  width: 50%;
+}
+
+.w-150 {
+  width: 150px;
+}
+
+.w-300 {
+  width: 300px;
+}
+
+.w-400 {
+  width: 400px;
+}
+
+.w-500 {
+  width: 500px;
+}
+
+.w-600 {
+  width: 600px;
+}
+
+// Text Colors
+.text-white {
+  color: white;
+}
+
+// Z-indexes
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-100 {
+  z-index: 100;
+}
+
+.z-index-200 {
+  z-index: 200;
+}
