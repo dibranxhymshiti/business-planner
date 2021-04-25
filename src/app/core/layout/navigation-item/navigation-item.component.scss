@@ -1,0 +1,19 @@
+@import 'variables';
+
+.navigation {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 0 9px;
+  border-radius: $border-radius;
+  height: 45px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  color: $text-gray;
+
+  &--active {
+    background-color: rgba($primary, 0.2);
+    color: $primary;
+  }
+}

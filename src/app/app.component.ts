@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lns-root',
+  selector: 'bp-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

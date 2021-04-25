@@ -1,0 +1,26 @@
+@import 'variables';
+@import 'mixins';
+
+.planner {
+  background-color: white;
+  border-radius: $border-radius;
+  padding: 50px;
+  min-width: 600px;
+  width: 50%;
+  margin: auto;
+}
+
+.start-year {
+  max-width: calc(50% - 10px);
+  min-width: calc(50% - 10px);
+}
+
+.footer-divider {
+  margin: 50px -50px;
+}
+
+.number-controls {
+  mat-icon {
+    cursor: pointer;
+  }
+}

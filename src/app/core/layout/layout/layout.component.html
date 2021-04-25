@@ -1,3 +1,36 @@
-<div fxLayoutAlign="center">
-  <p>Leonus Internet Banking</p>
-</div>
+<mat-sidenav-container class="container">
+  <mat-sidenav
+    mode="side"
+    opened
+    class="container__sidenav"
+    [fixedInViewport]="true"
+  >
+    <h1 class="text-primary font-30">HUP</h1>
+
+    <mat-form-field class="w-full my-20">
+      <mat-label>Company name</mat-label>
+      <mat-select>
+        <mat-option value="one">Company 1</mat-option>
+        <mat-option value="two">Company 2</mat-option>
+        <mat-option value="two">Company 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <bp-navigation-list></bp-navigation-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="container__content">
+    <div class="mb-20" fxLayoutAlign="space-between center">
+      <p>Breadcrumb</p>
+      <div fxLayout="row" fxLayoutGap="20px">
+        <div class="pin-drop">
+          <mat-icon>pin_drop</mat-icon>
+        </div>
+        <div class="profile-img">
+          <img src="assets/images/profile.svg" alt="profile" />
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

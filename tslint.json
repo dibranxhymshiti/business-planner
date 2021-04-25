@@ -139,13 +139,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "lns",
+      "bp",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "lns",
+      "bp",
       "kebab-case"
     ]
   }

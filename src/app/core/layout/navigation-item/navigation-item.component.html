@@ -1,0 +1,11 @@
+<div
+  class="navigation"
+  [routerLink]="navigationItem.route"
+  [routerLinkActive]="'navigation--active'"
+  [routerLinkActiveOptions]="{ exact: true }"
+>
+  <mat-icon fontSet="material-icons-outlined" class="mr-15">{{
+    navigationItem.icon
+  }}</mat-icon>
+  <p>{{ navigationItem.name }}</p>
+</div>

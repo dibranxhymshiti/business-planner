@@ -1,6 +1,49 @@
-@import "variables";
-@import "normalize";
-@import "reset";
-@import "mixins";
-@import "typography";
-@import "utilities";
+@import 'variables';
+@import 'custom-theme';
+@import 'normalize';
+@import 'reset';
+@import 'mixins';
+@import 'typography';
+@import 'utilities';
+
+html {
+  font-size: $font-size;
+  color: $text-gray !important;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.page-title {
+  font-size: rem(30);
+  color: $text-black;
+  font-weight: 500;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $primary;
+}
+
+.mat-expansion-panel-header {
+  padding: 0 5px 0 0 !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
+
+.mat-expansion-panel
+  .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled='true']),
+.mat-expansion-panel
+  .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled='true']),
+.mat-expansion-panel:not(.mat-expanded)
+  .mat-expansion-panel-header:hover:not([aria-disabled='true']) {
+  background: none;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  display: none;
+}

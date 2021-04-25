@@ -1,0 +1,44 @@
+@import 'variables';
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    padding: 50px 25px;
+    background: white;
+  }
+
+  &__content {
+    background-color: $background;
+    padding: 45px 30px;
+  }
+}
+
+%icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.pin-drop {
+  @extend %icon;
+  border-radius: $border-radius;
+  background-color: rgba($primary, 0.2);
+  color: $primary;
+}
+
+.profile-img {
+  @extend %icon;
+  border-radius: 50%;
+}

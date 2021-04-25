@@ -1,0 +1,209 @@
+<div class="planner">
+  <p class="font-12 text-gray">
+    Plan name and description <span class="pointer">(Click to edit)</span>
+  </p>
+  <div class="page-title my-15">Company Plan 2020</div>
+  <p>
+    This is the plan for company growth in 2021. We plan to use different
+    metrices to measure the progress.
+  </p>
+
+  <form [formGroup]="businessPlannerForm" (ngSubmit)="onSavePlanner()">
+    <div class="mt-40" fxLayout="column" fxLayoutGap="20px">
+      <mat-form-field class="start-year">
+        <mat-label>Start Year</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          (focus)="picker.open()"
+          formControlName="startYear"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+        <mat-hint>When the plan should start?</mat-hint>
+        <mat-error>
+          <bp-input-error [control]="formControls().startYear"></bp-input-error>
+        </mat-error>
+      </mat-form-field>
+
+      <div fxLayoutAlign="space-between" fxLayoutGap="20px">
+        <mat-form-field fxFlex>
+          <mat-label>Analysis years</mat-label>
+          <input matInput type="number" formControlName="analysisYears" />
+          <div class="number-controls" matSuffix fxLayout="row">
+            <mat-icon (click)="decrementByOne('analysisYears')"
+              >remove_circle_outline
+            </mat-icon>
+            <mat-icon (click)="incrementByOne('analysisYears')"
+              >add_circle_outline
+            </mat-icon>
+          </div>
+
+          <mat-hint>No analysis will be conducted</mat-hint>
+          <mat-error>
+            <bp-input-error
+              [control]="formControls().analysisYears"
+            ></bp-input-error>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex>
+          <mat-label>Plan duration</mat-label>
+          <input matInput type="number" formControlName="planDuration" />
+          <div class="number-controls" matSuffix fxLayout="row">
+            <mat-icon (click)="decrementByOne('planDuration')"
+              >remove_circle_outline
+            </mat-icon>
+            <mat-icon (click)="incrementByOne('planDuration')"
+              >add_circle_outline
+            </mat-icon>
+          </div>
+          <mat-error>
+            <bp-input-error
+              [control]="formControls().planDuration"
+            ></bp-input-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <mat-divider class="my-30"></mat-divider>
+
+    <mat-accordion formGroupName="address">
+      <mat-expansion-panel
+        class="mat-elevation-z0"
+        (opened)="onClickAddressPanel()"
+        (closed)="onClickAddressPanel()"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Address</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div fxLayout="column" fxLayoutGap="20px">
+          <mat-form-field>
+            <mat-label>Company name</mat-label>
+            <input matInput #cmpName formControlName="companyName" />
+            <mat-hint>Your company legal name here</mat-hint>
+            <mat-hint align="end">{{ cmpName.value.length }} / 100</mat-hint>
+            <mat-error>
+              <bp-input-error
+                [control]="formControls('address').address"
+              ></bp-input-error>
+            </mat-error>
+          </mat-form-field>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex>
+              <mat-label>Street</mat-label>
+              <input matInput formControlName="street" />
+              <mat-error>
+                <bp-input-error
+                  [control]="formControls('address').street"
+                ></bp-input-error>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex>
+              <mat-label>Postcode</mat-label>
+              <input matInput formControlName="postcode" />
+              <mat-error>
+                <bp-input-error
+                  [control]="formControls('address').postcode"
+                ></bp-input-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex>
+              <mat-label>Place</mat-label>
+              <input matInput formControlName="place" />
+              <mat-error>
+                <bp-input-error
+                  [control]="formControls('address').place"
+                ></bp-input-error>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex>
+              <mat-label>Phone number</mat-label>
+              <input matInput formControlName="phoneNumber" />
+              <mat-error>
+                <bp-input-error
+                  [control]="formControls('address').phoneNumber"
+                ></bp-input-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="20px">
+            <mat-form-field fxFlex>
+              <mat-label>Website</mat-label>
+              <input matInput formControlName="website" />
+              <mat-error>
+                <bp-input-error
+                  [control]="formControls('address').website"
+                ></bp-input-error>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex>
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" />
+              <mat-error>
+                <bp-input-error
+                  [control]="formControls('address').email"
+                ></bp-input-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-divider class="my-30"></mat-divider>
+
+    <mat-accordion>
+      <mat-expansion-panel
+        class="mat-elevation-z0"
+        (opened)="onClickFinancePanel()"
+        (closed)="onClickFinancePanel()"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Finance</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Finance form here!</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-divider class="my-30"></mat-divider>
+
+    <mat-form-field class="w-full">
+      <mat-label>Add Author</mat-label>
+      <mat-chip-list #chipList aria-label="Author selection">
+        <mat-chip
+          *ngFor="let author of authors"
+          (removed)="removeAuthor(author)"
+        >
+          {{ author.name }}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <input
+          placeholder="New Author..."
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="addAuthor($event)"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+
+    <mat-divider class="footer-divider"></mat-divider>
+
+    <div fxLayoutAlign="space-between center">
+      <button mat-flat-button color="accent" type="button">Cancel</button>
+      <button class="text-white" mat-flat-button color="primary">
+        Save as draft
+      </button>
+    </div>
+  </form>
+</div>
